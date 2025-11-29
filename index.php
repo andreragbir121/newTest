@@ -11,7 +11,7 @@
        alert('database connected'); 
    }
    else{
-   alert('Did not connect')
+   alert('Did not connect');
    }
     session_start();
 ?>
@@ -196,6 +196,7 @@ function test_input($data)
 
 </body>
 </html>
+
 
 
 

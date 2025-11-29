@@ -7,14 +7,14 @@
 
    // $conn = mysqli_connect($server, $user, $password, $database); 
 
-   if ($conn) { 
-       alert('database connected'); 
-   }
-   else
-   {
-   alert ("Did not connect");
-   }
-    // session_start();
+   // if ($conn) { 
+   //     alert('database connected'); 
+   // }
+   // else
+   // {
+   // alert ("Did not connect");
+   // }
+   //  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -197,6 +197,7 @@ function test_input($data)
 
 </body>
 </html>
+
 
 
 

@@ -5,7 +5,7 @@
    $password = 'CVpYA90hKZapo7';
    $database = 'b5_40553108_test';
 
-   $conn = mysqli_connect($server, $user, $password, $database); 
+   // $conn = mysqli_connect($server, $user, $password, $database); 
 
    if ($conn) { 
        alert('database connected'); 
@@ -196,6 +196,7 @@ function test_input($data)
 
 </body>
 </html>
+
 
 
 

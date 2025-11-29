@@ -50,8 +50,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4
         with:
           server: ${{ secrets.FTP_SERVER }}
-          username: b5_40553108
-          # ${{ secrets.FTP_USERNAME }}
-          password: CVpYA90hKZapo7
-          # ${{ secrets.FTP_PASSWORD }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /htdocs/

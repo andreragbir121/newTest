@@ -1,5 +1,4 @@
-<?php
-//establishing connection to database
+<!-- //establishing connection to database
    $server = 'sql100.byethost5.com	'; 
    $user = 'b5_40553108'; 
    $password = 'CVpYA90hKZapo7';
@@ -10,8 +9,8 @@
    if (!$conn) { 
        die('Database Connection failed: ' . mysqli_connect_error()); 
    }
-    session_start();
-?>
+    session_start(); -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -195,3 +194,4 @@ function test_input($data)
 
 </body>
 </html>
+

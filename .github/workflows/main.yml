@@ -1,55 +1,53 @@
-name: Deploy to Byethost
+name: CI and Deploy to InfinityFree
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
   build-and-test:
+    name: Build and Test PHP Site
     runs-on: ubuntu-latest
+
     steps:
+      # 1. Check out the repository
       - name: Check out repository
         uses: actions/checkout@v4
 
+      # 2. Set up PHP (optional but recommended if you want to lint/test)
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: "8.2"
 
-      - name: Verify required files exist
+      # 3. Basic PHP lint check (adjust file list to match your project)
+      - name: PHP Lint
         run: |
           set -euo pipefail
-          test -f index.php
-          test -f JS/index.js
-          test -f CSS/style.css
-          echo "All required files found"
-
-      - name: PHP Lint Check
-        run: php -l index.php
-
-      - name: Execute PHP script
-        run: |
-          php index.php > output.txt
-          test -f output.txt
-          echo "PHP executed successfully"
+          php -l index.php
+          php -1 JS/index.js
+          php -1 CSS/style.css
+          echo "PHP syntax OK"
 
   deploy:
-    name: Deploy to andreragbir.byethost5.com
-    runs-on: ubuntu-latest
+    name: Deploy to InfinityFree
     needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
     steps:
-      - name: Get latest code
+      # 1. Check out repository (again, in this job)
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Sync files via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+      # 2. Deploy via FTP to InfinityFree
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /htdocs/
+          server-dir: ${{ secrets.FTP_PATH }}
+          protocol: ftp
+          

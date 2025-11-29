@@ -1,9 +1,9 @@
 <?php
 //establishing connection to database
-   $server = 'localhost'; 
-   $user = 'root'; 
-   $password = '';
-   $database = 'test';
+   $server = 'sql100.byethost5.com	'; 
+   $user = 'b5_40553108'; 
+   $password = 'CVpYA90hKZapo7';
+   $database = 'b5_40553108_test';
 
    $conn = mysqli_connect($server, $user, $password, $database); 
 

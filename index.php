@@ -184,8 +184,6 @@ function test_input($data)
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-x-twitter"></i>
         <i class="fa-brands fa-linkedin"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-tiktok"></i>
         <p>Connect with our social media accounts</p>
     </div>
 </div>  

@@ -1,3 +1,5 @@
+<?php
+
 //establishing connection to database
    $server = 'sql100.byethost5.com	'; 
    $user = 'b5_40553108'; 
@@ -11,7 +13,7 @@
    }
     session_start();
 
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -192,6 +194,7 @@ function test_input($data)
 
 </body>
 </html>
+
 
 
 

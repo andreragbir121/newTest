@@ -7,8 +7,8 @@
 
    $conn = mysqli_connect($server, $user, $password, $database); 
 
-   if (!$conn) { 
-       die('Database Connection failed: ' . mysqli_connect_error()); 
+   if ($conn) { 
+       alert('database connected'); 
    }
     session_start();
 ?>
@@ -193,6 +193,7 @@ function test_input($data)
 
 </body>
 </html>
+
 
 
 

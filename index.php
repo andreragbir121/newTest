@@ -194,17 +194,3 @@ function test_input($data)
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

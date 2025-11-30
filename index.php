@@ -1,18 +1,18 @@
 <?php
-//establishing connection to database
-   $server = 'sql100.byethost5.com	'; 
-   $user = 'b5_40553108'; 
-   $password = 'CVpYA90hKZapo7';
-   $database = 'b5_40553108_test';
+if (!getenv('CI')) {
+    $server = 'sql100.byethost5.com';
+    $user = 'b5_40553108';
+    $password = 'CVpYA90hKZapo7';
+    $database = 'b5_40553108_test';
 
-   $conn = mysqli_connect($server, $user, $password, $database); 
+    $conn = mysqli_connect($server, $user, $password, $database);
 
-   if (!$conn) { 
-       die('Database Connection failed: ' . mysqli_connect_error()); 
-   }
-    session_start();
-
+    if (!$conn) {
+        die('Database Connection failed: ' . mysqli_connect_error());
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -194,6 +194,7 @@ function test_input($data)
 
 </body>
 </html>
+
 
 
 

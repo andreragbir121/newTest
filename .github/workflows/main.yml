@@ -1,3 +1,4 @@
+
 name: Deploy to Byethost
 
 on:
@@ -13,14 +14,17 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
+      # 1. Check out repository
       - name: Check out repository
         uses: actions/checkout@v4
 
+      # 2. Set up PHP
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
 
+      # 3. Verify required files exist
       - name: Verify required files exist
         run: |
           set -euo pipefail
@@ -29,11 +33,14 @@ jobs:
           test -f CSS/style.css
           echo "All required files found"
 
+      # 4. PHP Lint Check
       - name: PHP Lint Check
         run: php -l index.php
 
+      # 5. Execute PHP script (skip DB connection)
       - name: Execute PHP script
         run: |
+          export CI=true
           php index.php > output.txt
           test -f output.txt
           echo "PHP executed successfully"
@@ -49,7 +56,9 @@ jobs:
       - name: Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}   # e.g., ftpupload.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /htdocs/
+          server-dir: /htdocs/                # Byethost web root
+          timeout: 86400000
+          log-level: standard

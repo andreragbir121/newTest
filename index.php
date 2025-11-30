@@ -5,16 +5,12 @@
    $password = 'CVpYA90hKZapo7';
    $database = 'b5_40553108_test';
 
-   // $conn = mysqli_connect($server, $user, $password, $database); 
+   $conn = mysqli_connect($server, $user, $password, $database); 
 
-   // if ($conn) { 
-   //     alert('database connected'); 
-   // }
-   // else
-   // {
-   // alert ("Did not connect");
-   // }
-   //  session_start();
+ 
+if (!$conn) {
+    die('Database Connection failed: ' . mysqli_connect_error());
+}
 ?>
 
 <!DOCTYPE html>
@@ -197,6 +193,7 @@ function test_input($data)
 
 </body>
 </html>
+
 
 
 

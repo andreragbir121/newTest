@@ -155,25 +155,26 @@ function test_input($data)
 <div class="contact contact-input centered">
     <form method="POST" class="contact-form" name = "contact" id="contact" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" onsubmit="return validate()">
         
-        <input class="contact-input" name="fullName" type="text" placeholder="Full Name" value="<?php echo $fullName; ?>"/>
+        <input class="contact-input" id="fullName" name="fullName" type="text" placeholder="Full Name" value="<?php echo $fullName; ?>"/>
         <span id="fullNameErr" class="error"><?php echo $fullNameErr; ?></span>
 
 
-        <input class="contact-input"name="Email" type="Email" placeholder="Email" value="<?php echo $Email; ?>"/>
+        <input class="contact-input" id = "Email" name="Email" type="Email" placeholder="Email" value="<?php echo $Email; ?>"/>
         <span id="EmailErr" class="error"><?php echo $EmailErr; ?></span>
 
 
-        <input class="contact-input" name="phNumber" type="tel" placeholder="Phone Number" value="<?php echo $phNumber; ?>"/><br>   <!--W3Schools.com. (n.d.). https://www.w3schools.com/Tags/att_input_type_tel.asp-->
+        <input class="contact-input" id = "phNumber" name="phNumber" type="tel" placeholder="Phone Number" value="<?php echo $phNumber; ?>"/><br>   <!--W3Schools.com. (n.d.). https://www.w3schools.com/Tags/att_input_type_tel.asp-->
         <span id="phNumberErr" class="error"><?php echo $phNumberErr; ?></span>
 
 
-        <textarea class="contact-input" name="comment" rows="6" cols="70" placeholder="Please Leave your Feedback here" value="<?php echo $comment; ?>"/></textarea><br>
+        <textarea class="contact-input" id = "comment" name="comment" rows="6" cols="70" placeholder="Please Leave your Feedback here" value="<?php echo $comment; ?>"/></textarea><br>
         <span id="commentErr" class="error"><?php echo $commentErr; ?></span>
 
         <input type="submit" name="submit" class="contact-submit-btn">
 
     </form>
 </div>
+
 
 
 <div class="contact contact-details centered">
@@ -194,3 +195,4 @@ function test_input($data)
 
 </body>
 </html>
+

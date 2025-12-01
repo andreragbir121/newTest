@@ -177,17 +177,17 @@ function test_input($data)
 
 
 
-<!-- <div class="contact contact-details centered">
+<div class="contact contact-details centered">
     <p class="contact-info"><i class="fa-solid fa-location-dot"></i>Port Of Spain</p>
     <p class="contact-info"><i class="fa-solid fa-phone"></i>+1-(868)-326-2313</p>
     <p class="contact-info"> <i class="fa-solid fa-envelope"></i>brightminds@gmail.com</p>
 
-    <div class="social-media"> -->
+    <div class="social-media">
         
-        <i class="fa-brands fa-facebook"></i>
+        <!-- <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-x-twitter"></i>
         <i class="fa-brands fa-linkedin"></i>
-        <p>Connect with our social media accounts</p>
+        <p>Connect with our social media accounts</p> -->
     </div>
 </div>  
 
@@ -195,5 +195,6 @@ function test_input($data)
 
 </body>
 </html>
+
 
 
